@@ -1,14 +1,31 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-*.egg-info/
+# dependencies
+node_modules/
+
+# Expo
+.expo/
 dist/
-build/
-.venv/
-venv/
-env/
-.env
+web-build/
+expo-env.d.ts
+
+# Native secrets
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Debug / logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
 *.log
+
+# macOS
 .DS_Store
+
+# Environment
+.env
+.env.local
