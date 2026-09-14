@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!--
+	  Granted by Apple on request, not self-service. Until it is on the App ID,
+	  the CarPlay scene will not connect: the app builds and the phone half runs,
+	  but the car screen stays empty.
+	  Request at: https://developer.apple.com/contact/carplay/
+	-->
+	<key>com.apple.developer.carplay-maps</key>
+	<true/>
+
+	<!--
+	  Only needed if you switch AppEnvironment to WeatherKitProvider (build
+	  setting USE_WEATHERKIT). The default Open-Meteo provider needs neither
+	  this nor a paid account.
+	-->
+	<key>com.apple.developer.weatherkit</key>
+	<true/>
+</dict>
+</plist>
