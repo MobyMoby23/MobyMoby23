@@ -1,0 +1,48 @@
+{
+  "name": "skyway",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start --dev-client",
+    "prebuild": "expo prebuild --clean --platform ios",
+    "ios": "expo run:ios --device",
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "build:dev": "eas build --profile development --platform ios",
+    "build:preview": "eas build --profile preview --platform ios"
+  },
+  "dependencies": {
+    "@bradford-tech/expo-carplay": "^0.4.0",
+    "@react-native-async-storage/async-storage": "^3.1.1",
+    "expo": "~57.0.22",
+    "expo-build-properties": "~57.0.17",
+    "expo-dev-client": "~57.0.19",
+    "expo-location": "~57.0.17",
+    "expo-speech": "~57.0.3",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.3.0",
+    "react-native": "0.87.1",
+    "react-native-maps": "^1.29.2",
+    "react-native-safe-area-context": "~5.9.1",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
+    "@types/react": "~19.3.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "~5.9.2"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/__tests__/**/*.test.ts"
+    ]
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

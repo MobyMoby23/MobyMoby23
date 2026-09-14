@@ -1,4 +1,12 @@
-# Skyway
+# Skyway (Swift / SwiftUI) — reference implementation
+
+> **The primary implementation is now the Expo app in [`../SkywayExpo`](../SkywayExpo).**
+>
+> This native Swift version came first and is kept as a reference for the
+> behaviour — the route-weather scan, the alert rules, the incident lifetime
+> model and the CarPlay template design all began here and were ported. It has
+> never been compiled (it was written without access to Xcode), and it needs
+> Xcode to build at all, which is why the project moved to Expo + EAS Build.
 
 A CarPlay navigation app for iPhone: turn-by-turn driving directions with
 crowd-sourced hazard reports — the Waze idea — plus weather woven through the
