@@ -6,7 +6,10 @@
   "scripts": {
     "start": "expo start",
     "ios": "expo start --ios",
-    "test": "node --experimental-strip-types --test tests/*.test.ts"
+    "start:go": "expo start --go",
+    "build:dev": "eas build --profile development --platform ios",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.1.1",
@@ -14,6 +17,7 @@
     "expo": "~57.0.24",
     "expo-clipboard": "~57.0.2",
     "expo-constants": "~57.0.19",
+    "expo-dev-client": "~57.0.19",
     "expo-font": "~57.0.4",
     "expo-haptics": "~57.0.3",
     "expo-linking": "~57.0.10",
@@ -22,6 +26,7 @@
     "expo-status-bar": "~57.0.1",
     "expo-system-ui": "~57.0.4",
     "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-native": "0.86.3",
     "react-native-nfc-manager": "~3.17.2",
     "react-native-safe-area-context": "~5.7.0",

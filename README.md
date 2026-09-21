@@ -33,23 +33,38 @@ Scan the QR code with the Camera app and open it in Expo Go.
 
 ### Running with real NFC
 
-A development build is a one-time step and keeps the same fast-refresh workflow
-as Expo Go:
+`expo-dev-client` and `eas.json` are already set up, so this is a one-time build
+that keeps the same fast-refresh workflow as Expo Go.
+
+**With EAS (no Mac required):**
 
 ```bash
-npx expo install expo-dev-client
-npx expo run:ios --device       # needs Xcode + a Mac, or use `eas build`
+npm install -g eas-cli
+eas login
+eas device:create          # register the iPhone you will install on
+npm run build:dev          # eas build --profile development --platform ios
 ```
 
-Requirements for real scanning:
+Install the resulting build from the link EAS prints, then `npm start` and open
+it from the dev launcher.
 
-- iPhone 7 or newer on iOS 13+ (iOS 13 added NDEF **writing**; iOS 11–12 read only).
-- A **paid** Apple Developer account — the Near Field Communication Tag Reading
-  capability is not available on a free personal team.
-- Enable *Near Field Communication Tag Reading* for the App ID in the Apple
-  Developer portal. The entitlement and the `NFCReaderUsageDescription` string
-  are already configured in `app.json` via the `react-native-nfc-manager`
-  config plugin.
+**Locally (needs Xcode on a Mac):**
+
+```bash
+npx expo run:ios --device
+```
+
+One-time setup in the Apple Developer portal: enable the **Near Field
+Communication Tag Reading** capability for the App ID
+`com.mobymoby23.rfidtool`. The matching entitlement and the
+`NFCReaderUsageDescription` string are already configured in `app.json` via the
+`react-native-nfc-manager` config plugin, so nothing else needs editing.
+
+Device requirements: iPhone 7 or newer on iOS 13+ (iOS 13 is what added NDEF
+*writing*; iOS 11–12 can only read).
+
+Once `expo-dev-client` is installed, `npm start` targets the dev build by
+default. Use `npm run start:go` when you want Expo Go instead.
 
 ## What it does
 
@@ -84,6 +99,7 @@ it does not scan them.
 ## Project layout
 
 ```
+eas.json                EAS build profiles (development / preview / production)
 app/                    expo-router routes
   _layout.tsx           root stack
   (tabs)/               Read · Write · Convert · History
