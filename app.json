@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "RFID Tool",
+    "slug": "rfid-tool",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "rfidtool",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "platforms": ["ios"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.mobymoby23.rfidtool",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "react-native-nfc-manager",
+        {
+          "nfcPermission": "RFID Tool uses NFC to read and write nearby tags."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}
